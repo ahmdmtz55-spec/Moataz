@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(30,144,255,0.15), transparent 40%),
+        linear-gradient(145deg, #040a14, #07182c);
+    color: #eaf3ff;
+}
+
+/* ================= PROFILE ================= */
+
+.top-profile {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 49px 40px 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.avatar {
+    width: 90px;
+    height: 90  px;
+    border-radius: 50%;
+    border: 2px solid rgba(30,144,255,0.8);
+    box-shadow: 0 0 25px rgba(30,144,255,0.45);
+}
+
+.top-profile h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #6fb1ff;
+    letter-spacing: .3px;
+}
+
+#d-username {
+    font-size: 12px;
+    opacity: .75;
+}
+
+/* ================= DISCORD STATUS ================= */
+
+.discord-status {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* حالات */
+.dot.online {
+    background: #2ecc71;
+    box-shadow: 0 0 14px #2ecc71;
+}
+
+.dot.idle {
+    background: #f1c40f;
+    box-shadow: 0 0 14px #f1c40f;
+}
+
+.dot.dnd {
+    background: #e74c3c;
+    box-shadow: 0 0 14px #e74c3c;
+}
+
+.dot.offline {
+    background: #7f8c8d;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    max-width: 950px;
+    margin: auto;
+    padding: 29px 35px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+/* ================= CARD BASE ================= */
+
+.card {
+    border-radius: 15px;
+    padding: 19px;
+    border: 3px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: .35s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* تأثير إضاءة داخلي */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left,
+        rgba(255,255,255,0.12),
+        transparent 55%);
+    opacity: .5;
+    pointer-events: none;
+}
+
+.card h2 {
+    margin-bottom: 17px;
+    color: #7bbcff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+/* ================= CARD THEMES ================= */
+
+.card.links {
+    background: linear-gradient(145deg, #0a233d, #07182b);
+}
+
+.card.skills {
+    background: linear-gradient(145deg, #081f32, #041423);
+}
+
+.card.discord-card {
+    background: linear-gradient(145deg, #0b2f46, #051a29);
+    box-shadow: 0 0 40px rgba(30,144,255,0.2);
+}
+
+.card.projects {
+    background: linear-gradient(145deg, #101c3d, #070f24);
+}
+
+.card.services {
+    background: linear-gradient(145deg, #0e273e, #071827);
+}
+
+.card.works {
+    background: linear-gradient(145deg, #0b263a, #061827);
+}
+
+.card.stats {
+    background: linear-gradient(145deg, #0f2f50, #081a2f);
+    box-shadow: 0 0 45px rgba(100,150,255,0.28);
+}
+
+.card.contact {
+    background: linear-gradient(145deg, #0b1f33, #050f1c);
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(255,255,255,0.08);
+    padding: 13px 19px;
+    border-radius: 140px;
+    color: #eaf3ff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 13px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+button:hover {
+    background: rgba(30,144,255,0.25);
+    border-color: rgba(30,144,255,0.45);
+    transform: translateY(-2px);
+}
+
+/* ================= SKILLS ================= */
+
+.skill {
+    margin-bottom: 18px;
+}
+
+.skill span {
+    font-size: 14px;
+    opacity: .85;
+}
+
+.bar {
+    margin-top: 7px;
+    height: 9px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #1e90ff, #7bbcff);
+    box-shadow: 0 0 12px rgba(30,144,255,0.6);
+}
+
+/* ================= LIST ================= */
+
+.list-text {
+    list-style: none;
+}
+
+.list-text li {
+    padding: 9px 0;
+    opacity: .85;
+}
+
+/* ================= STATS ================= */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.stats div strong {
+    font-size: 26px;
+    color: #6fb1ff;
+}
+
+.stats div span {
+    display: block;
+    font-size: 13px;
+    opacity: .65;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: .45;
+    font-size: 13px;
+}
